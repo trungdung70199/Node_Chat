@@ -28,7 +28,7 @@ io.on('connection', (socket) => {
 })
 
 
-// boot server
+// start server
 server.listen(port, host, () => {
     console.log(`listening on http://${host}:${port}`);
 })
