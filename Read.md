@@ -1,8 +1,28 @@
-Node.jsの初期化
+
+1. Node.jsの初期化
+```
 npm init -y
-Expressのインストール
+```
+
+2. Expressのインストール
+```
 npm i express
-dotenvのインストール
+```
+
+3. dotenvのインストール
+```
 npm i dotenv
-Socket.ioのインストール
+```
+
+4. Socket.ioのインストール
+```
 npm i socket.io
+```
+
+5. .envファイルの作成
+```
+HOST=localhost
+PORT=3000
+```
+
+6. serve.jsファイルの作成
