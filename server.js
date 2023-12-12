@@ -1,8 +1,13 @@
 // call express module
 const express = require('express')
-// make server
-const app = express();
-// http module and express connect
-const http = require('http').createServer(app)
+// call http createServer module 
+const { createServer } = require('node:http');
+// call Socket.io Sever module
+const { Server } = require('socket.io');
 
-const io = require('socket.io')(http)
+// Make Express server
+const app = express();
+const server = createServer(app);
+
+// Make Socket.io
+const io = new Server(server);
