@@ -1,4 +1,4 @@
-console.log('hello')
+console.log('hello');
 // Websocket URL
 const url = '';
 // Websocket connect
@@ -7,6 +7,9 @@ var socket = io.connect(url);
 // chat message
 socket.on('chat_message', (data) => {
     console.log(data);
+    var p = document.createElement('p');
+    p.innerHTML = data.message;
+    document.getElementById('messageList').append(p);
 })
 
 function sendMessage() {

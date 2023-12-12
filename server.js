@@ -30,9 +30,12 @@ io.on('connection', (socket) => {
     socket.on('chat_message', (data) => {
         console.log(socket.id);
         console.log(data);
+        // add user socket id
+        data.socket_id = socket.id;
+        // send message to user
+        io.emit('chat_message', data);
     })
 })
-
 
 // start server
 server.listen(port, host, () => {
