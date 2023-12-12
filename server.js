@@ -11,3 +11,24 @@ const server = createServer(app);
 
 // Make Socket.io
 const io = new Server(server);
+
+// Call .env
+const dotenv = require('dotenv');
+dotenv.config();
+const host = process.env.HOST
+const port = process.env.PORT
+
+// Server setting
+app.use(express.urlencoded({ extended: true }));
+app.use(express.static(__dirname + '/public'));
+
+//Socket.io
+io.on('connection', (socket) => {
+    console.log('connected!!!')
+})
+
+
+// boot server
+server.listen(port, host, () => {
+    console.log(`listening on http://${host}:${port}`);
+})
