@@ -25,6 +25,12 @@ app.use(express.static(__dirname + '/public'));
 //Socket.io
 io.on('connection', (socket) => {
     console.log('connected!!!')
+
+    // chat message
+    socket.on('chat_message', (data) => {
+        console.log(socket.id);
+        console.log(data);
+    })
 })
 
 
